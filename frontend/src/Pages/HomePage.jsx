@@ -1,47 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import eatOutImage from '../assets/eatoutbanq.png';
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col h-screen items-center justify-center bg-[#EFB710]">
-      {/* Title */}
-      <h1 className="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1048EF] to-[#3260ea] mb-40 transition-transform transform hover:scale-110">
-        Crave It!
-      </h1>
+    <div className="flex flex-col h-screen items-center justify-center bg-gradient-to-b from-[#EFB710] to-[#FFE59E] p-8">
+      {/* Logo */}
+      <div className="flex items-center justify-center mb-12">
+        <span className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#3260ea] to-[#EF7100] drop-shadow-md">
+          Crave It!
+        </span>
+      </div>
 
       {/* Button Container */}
-      <div className="flex justify-center space-x-6">
-        {/* Eat In Button */}
-        <Link to="/eat-in-form" className="relative w-64 h-64 bg-[#EFB710] rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer">
-          <img
-            src="https://via.placeholder.com/256x256?text=Eat+In"
-            alt="Eat In"
-            className="w-full h-full object-cover rounded-xl"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-xl">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-white">Eat In</h2>
-              <p className="text-white text-lg">Find recipes based on cravings and ingredients</p>
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+        {/* Eat In Card */}
+        <Link
+          to="/eat-in-form"
+          className="relative group w-full h-72 bg-[#3260ea] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center justify-center text-center text-white p-4"
+        >
+          <h2 className="text-5xl font-bold mb-2">Eat In</h2>
+          <p className="text-lg">Find recipes based on cravings and ingredients</p>
+          <div className="absolute bottom-4 right-4 text-white text-xs bg-black bg-opacity-40 rounded px-2 py-1">
+            Start Cooking
           </div>
         </Link>
 
-        {/* Eat Out Button */}
-        <Link to="/eat-out-form" className="relative w-64 h-64 bg-[#EFB710] rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer">
-          <img
-            src={eatOutImage}
-            alt="Eat Out"
-            className="w-full h-full object-cover rounded-xl"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-xl">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-white">Eat Out</h2>
-              <p className="text-white text-lg">Discover nearby spots to dine out</p>
-            </div>
+        {/* Eat Out Card */}
+        <Link
+          to="/eat-out-form"
+          className="relative group w-full h-72 bg-[#EF7100] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center justify-center text-center text-white p-4"
+        >
+          <h2 className="text-5xl font-bold mb-2">Eat Out</h2>
+          <p className="text-lg">Discover nearby spots to dine out</p>
+          <div className="absolute bottom-4 right-4 text-white text-xs bg-black bg-opacity-40 rounded px-2 py-1">
+            Find Restaurants
           </div>
         </Link>
       </div>
+
+      {/* Additional Info Section */}
+      <footer className="mt-16 text-center text-gray-700">
+        <p className="text-lg">Your one-stop solution for all your food cravings!</p>
+        <p className="text-sm">© 2024 Crave It! All rights reserved.</p>
+      </footer>
     </div>
   );
 };
