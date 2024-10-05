@@ -1,13 +1,44 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import HomePage from './Pages/HomePage'
+import EatInFormPage from './Pages/EatInFormPage'
+import EatInResultPage from './Pages/EatInResultPage'
+import EatOutFormPage from './Pages/EatOutFormPage'
+import EatOutResults from './Pages/EatOutResults'
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <HomePage/>
+    },
+    {
+      path: '/eat-in-form',
+      element: <EatInFormPage/>,
+      
+    },
+    {
+      path: 'inResults',
+      element: <EatInResultPage/>
+    },
+    {
+      path: '/eat-out-form',
+      element: <EatOutFormPage/>,
+    },
+    {
+        path: 'outResults',
+        element: <EatOutResults/>
+    }
+  ])
+
+  
 
   return (
     <>
-      <h1 className='bg-blue-500'>Food Finder</h1>
+      <RouterProvider router={router}/>
     </>
   )
 }
