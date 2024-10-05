@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import eatOutImage from '../assets/eatoutbanq.png';
 
 const HomePage = () => {
   return (
@@ -12,7 +13,7 @@ const HomePage = () => {
       {/* Button Container */}
       <div className="flex justify-center space-x-6">
         {/* Eat In Button */}
-        <Link to="/eat-in-form" className="relative w-64 h-64 bg-green-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer">
+        <Link to="/eat-in-form" className="relative w-64 h-64 bg-[#EFB710] rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer">
           <img
             src="https://via.placeholder.com/256x256?text=Eat+In"
             alt="Eat In"
@@ -27,9 +28,9 @@ const HomePage = () => {
         </Link>
 
         {/* Eat Out Button */}
-        <Link to="/eat-out-form" className="relative w-64 h-64 bg-orange-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer">
+        <Link to="/eat-out-form" className="relative w-64 h-64 bg-[#EFB710] rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer">
           <img
-            src="https://via.placeholder.com/256x256?text=Eat+Out"
+            src={eatOutImage}
             alt="Eat Out"
             className="w-full h-full object-cover rounded-xl"
           />
