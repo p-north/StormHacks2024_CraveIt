@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1>Food Finder</h1>
+      <h1 className='bg-blue-500'>Food Finder</h1>
     </>
   )
 }
