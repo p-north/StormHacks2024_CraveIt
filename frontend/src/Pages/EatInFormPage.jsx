@@ -53,11 +53,9 @@ const EatInFormPage = () => {
     //background
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-300 to-orange-500">
       {/* Title */}
-      <div className="-mt-60">
-        <h1 className="text-5xl font-bold mb-10 text-gray-900">
+        <h1 className="text-5xl font-bold mb-10 text-[#3260ea]">
           What Are You Craving?
         </h1>
-      </div>
 
       {/* Form */}
       <div>
@@ -66,6 +64,7 @@ const EatInFormPage = () => {
           <div className="mb-6 w-80">
             <label
               htmlFor="Cuisine"
+
               className="block text-lg font-semibold text-gray-800 mb-2"
             >
               Cuisine&nbsp;
@@ -76,6 +75,7 @@ const EatInFormPage = () => {
               name="Cuisine"
               list="Cuisines"
               value={formData.cuisine}
+              placeholder = "Select Cuisine"
               onChange={handleCuisineChange}
               className="w-full p-3 border
             border-gray-300 rounded-lg focus:ring focus:ring-blue-500"
@@ -135,6 +135,7 @@ const EatInFormPage = () => {
               id="TypeOfDish"
               name="TypeofDish1"
               list="Dishes"
+              placeholder = "Select Dish 1"
               value={formData.dish1}
               onChange={handleDishChange1}
               className="w-full p-3 border
@@ -172,6 +173,7 @@ const EatInFormPage = () => {
               type="text"
               id="TypeOfDish"
               name="TypeofDish2"
+              placeholder = "Select Dish 2"
               list="Dishes"
               value={formData.dish2}
               onChange={handleDishChange2}
@@ -212,6 +214,7 @@ const EatInFormPage = () => {
               name="TypeofDish3"
               list="Dishes"
               value={formData.dish3}
+              placeholder = "Select Dish 3"
               onChange={handleDishChange3}
               className="w-full p-3 border
               border-gray-300 rounded-lg focus:ring focus:ring-blue-500"
@@ -236,10 +239,22 @@ const EatInFormPage = () => {
           </div>
 
           {/* Submit Button */}
+          <div className='flex justify-center'>
+
           <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
-            Generate Recipies
+            Generate Recipes
             <Link to={'inResults'}></Link>
           </button>
+          </div>
+
+          <div className='flex justify-center my-3'>
+          <Link to="/">
+        <button className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">
+          Home
+        </button>
+      </Link>
+          
+          </div>
         </form>
       </div>
     </div>

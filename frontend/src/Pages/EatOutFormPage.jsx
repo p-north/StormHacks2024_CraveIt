@@ -60,7 +60,7 @@ const EatOutFormPage = () => {
    
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-300 to-orange-500">
     {/* Title */}
-    <h1 className="text-5xl font-bold mb-10 text-gray-900">What Are You Craving?</h1>
+    <h1 className="text-5xl font-bold mb-10 text-[#3260ea]">What Are You Craving?</h1>
 
     <form onSubmit={handleSubmit}>
       {/* Cuisine Input */}
@@ -122,10 +122,23 @@ const EatOutFormPage = () => {
       </div>
 
     {/* Submit Button */}
-    <button type='submit' className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
-      Find Restaurants
-      <Link to='/outResults'></Link>
-    </button>
+      {/* Submit Button */}
+      <div className='flex justify-center'>
+
+<button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+  Generate Recipes
+  <Link to={'inResults'}></Link>
+</button>
+</div>
+
+<div className='flex justify-center my-3'>
+<Link to="/">
+<button className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">
+Home
+</button>
+</Link>
+
+</div>
     </form>
 
   </div>
@@ -142,3 +155,5 @@ const EatOutFormPage = () => {
     // </>
 
 export default EatOutFormPage;
+
+
