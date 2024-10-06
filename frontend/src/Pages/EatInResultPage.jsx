@@ -3,30 +3,30 @@ import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 // Hardcoded single recipe data
-const recipe = {
-  name: 'Spaghetti Carbonara',
-  image: 'https://via.placeholder.com/150', // Replace with real PNG URL
-  ingredients: [
-    '200g spaghetti',
-    '100g bacon',
-    '2 eggs',
-    '50g parmesan cheese',
-    'Salt & pepper',
-    '200g spaghetti',
-    '100g bacon',
-    '2 eggs',
-    '50g parmesan cheese',
-    'Salt & pepper',
-    '200g spaghetti',
-    '100g bacon',
-    '2 eggs',
-    '50g parmesan cheese',
-    'Salt & pepper',
-  ],
-  instructions:
-    '1. Boil pasta. 2. Fry bacon. 3. Mix eggs and cheese. 4. Combine everything and serve.',
-  videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-};
+// const recipe = {
+//   name: 'Spaghetti Carbonara',
+//   image: 'https://via.placeholder.com/150', // Replace with real PNG URL
+//   ingredients: [
+//     '200g spaghetti',
+//     '100g bacon',
+//     '2 eggs',
+//     '50g parmesan cheese',
+//     'Salt & pepper',
+//     '200g spaghetti',
+//     '100g bacon',
+//     '2 eggs',
+//     '50g parmesan cheese',
+//     'Salt & pepper',
+//     '200g spaghetti',
+//     '100g bacon',
+//     '2 eggs',
+//     '50g parmesan cheese',
+//     'Salt & pepper',
+//   ],
+//   instructions:
+//     '1. Boil pasta. 2. Fry bacon. 3. Mix eggs and cheese. 4. Combine everything and serve.',
+//   videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+// };
 
 const EatInResultPage = () => {
   const location = useLocation();
@@ -48,11 +48,29 @@ const EatInResultPage = () => {
               className="w-full h-64 object-cover rounded-lg mb-4"
             />
             <h3 className="text-2xl font-bold mb-2 text-gray-800">Ingredients</h3>
-            <ul className="list-disc list-inside text-gray-700 text-lg">
-              {recipe.ingredients.map((ingredient, i) => (
-                <li key={i}>{ingredient}</li>
-              ))}
+            <ul className="list-disc list-inside text-gray-700 text-lg list-none">
+              <li>{apiResponse.apiData.strIngridient1}</li>
+              <li>{apiResponse.apiData.strIngredient2}</li>
+              <li>{apiResponse.apiData.strIngredient3}</li>
+              <li>{apiResponse.apiData.strIngredient4}</li>
+              <li>{apiResponse.apiData.strIngredient5}</li>
+              <li>{apiResponse.apiData.strIngredient6}</li>
+              <li>{apiResponse.apiData.strIngredient7}</li>
+              <li>{apiResponse.apiData.strIngredient8}</li>
+              <li>{apiResponse.apiData.strIngredient9}</li>
+              <li>{apiResponse.apiData.strIngredient10}</li>
+              <li>{apiResponse.apiData.strIngredient11}</li>
+              <li>{apiResponse.apiData.strIngredient12}</li>
+              <li>{apiResponse.apiData.strIngredient13}</li>
+              <li>{apiResponse.apiData.strIngredient14}</li>
+              <li>{apiResponse.apiData.strIngredient15}</li>
+              <li>{apiResponse.apiData.strIngredient16}</li>
+              <li>{apiResponse.apiData.strIngredient17}</li>
+              <li>{apiResponse.apiData.strIngredient18}</li>
+              <li>{apiResponse.apiData.strIngredient19}</li>
+              <li>{apiResponse.apiData.strIngredient20}</li>
             </ul>
+
           </div>
 
           {/* Right Side: Instructions */}
@@ -74,7 +92,7 @@ const EatInResultPage = () => {
             Watch Recipe Video
           </a>
           <Link
-            to=""
+            to="/"
             className="text-white bg-gray-600 px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300 w-full md:w-auto text-center"
           >
             Back to Home
