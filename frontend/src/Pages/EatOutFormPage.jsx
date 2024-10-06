@@ -32,7 +32,7 @@ const EatOutFormPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#EFB710] to-[#FFE59E]">
+    <div className="flex flex-col h-screen items-center justify-center bg-gradient-to-b from-[#EFB710] to-[#FFE59E] p-8">
       {/* Title */}
       <h1 className="text-5xl font-bold mb-10 text-[#3260ea]">What Are You Craving?</h1>
 
@@ -92,20 +92,22 @@ const EatOutFormPage = () => {
         </div>
       </div>
 
+      {/* Submit Button */}
+            <button
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 mb-4"
+              onClick={handleSubmit}
+            >
+              Find Restaurants
+            </button>
+
       {/* Home Button */}
       <Link to="/">
-        <button className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300 mb-4">
+        <button className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">
           Home
         </button>
       </Link>
 
-      {/* Submit Button */}
-      <button
-        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
-        onClick={handleSubmit}
-      >
-        Find Restaurants
-      </button>
+      
     </div>
   );
 };

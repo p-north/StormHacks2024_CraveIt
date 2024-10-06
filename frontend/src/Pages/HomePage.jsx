@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col h-screen items-center justify-center bg-gradient-to-b from-[#EFB710] to-[#FFE59E] p-8">
+    <div className="flex flex-col h-screen items-center justify-center bg-gradient-to-b from-[#EFB710] to-[#FFE59E] p-8 ">
       {/* Logo */}
       <div className="flex items-center justify-center mb-12">
-        <span className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#3260ea] to-[#EF7100] drop-shadow-md">
+        <span className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#3260ea] to-[#EF7100] drop-shadow-md transition-transform transform hover:scale-110">
           Crave It!
         </span>
       </div>
