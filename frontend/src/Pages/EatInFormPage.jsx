@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EatInFormPage = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +25,9 @@ const EatInFormPage = () => {
     setFormData((prevData) => ({ ...prevData, dish3: e.target.value }));
   };
 
+  // const [apiResponse, setApiResponse] = useState();
+  const navigate = useNavigate();
+
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); //Prevent page refresh
@@ -37,7 +41,9 @@ const EatInFormPage = () => {
       });
 
       const result = await response.json();
-      console.log("Response from server", result);
+      // setApiResponse(result.apiResponse)
+      navigate('/inResults', {state:result})
+      // console.log("Response from server", result);
     } catch (error) {
       console.log("Error sending data to backend:", error);
     }
@@ -232,6 +238,7 @@ const EatInFormPage = () => {
           {/* Submit Button */}
           <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
             Generate Recipies
+            <Link to={'inResults'}></Link>
           </button>
         </form>
       </div>

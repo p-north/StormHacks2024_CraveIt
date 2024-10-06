@@ -21,7 +21,7 @@ function App() {
       
     },
     {
-      path: 'inResults',
+      path: '/inResults',
       element: <EatInResultPage/>
     },
     {
@@ -29,7 +29,7 @@ function App() {
       element: <EatOutFormPage/>,
     },
     {
-        path: 'outResults',
+        path: '/outResults',
         element: <EatOutResults/>
     }
   ])
