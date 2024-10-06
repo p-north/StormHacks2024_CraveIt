@@ -21,7 +21,7 @@ const EatInFormPage = () => {
           
           {/* Cuisines */}
           <div className="mb-6 w-80">
-            <label for="Cuisine" className="block text-lg font-semibold text-gray-800 mb-2" >Cuisine&nbsp;</label>
+            <label htmlFor="Cuisine" className="block text-lg font-semibold text-gray-800 mb-2" >Cuisine&nbsp;</label>
             <input type="text" id="Cuisine" name="Cuisine" list="Cuisines" className="w-full p-3 border
             border-gray-300 rounded-lg focus:ring focus:ring-blue-500">
             </input>
@@ -73,7 +73,7 @@ const EatInFormPage = () => {
             {/* Type of Dish 1st preference*/}
             <div className="mb-6 w-80">
 
-            <label for="TypeOfDish" className="block text-lg font-semibold text-gray-800 mb-2" >Type of Dish (1st preference)&nbsp;</label>
+            <label htmlFor="TypeOfDish" className="block text-lg font-semibold text-gray-800 mb-2" >Type of Dish (1st preference)&nbsp;</label>
           
             <input type="text" id="TypeOfDish" name="TypeofDish1" list="Dishes" className="w-full p-3 border
             border-gray-300 rounded-lg focus:ring focus:ring-blue-500">
@@ -107,7 +107,7 @@ const EatInFormPage = () => {
 
              {/* Type of Dish 2nd preference*/}
             <div className="mb-6 w-80" >
-              <label for="TypeOfDish" className="block text-lg font-semibold text-gray-800 mb-2" >Type of Dish (2nd preference)&nbsp;</label>
+              <label htmlFor="TypeOfDish" className="block text-lg font-semibold text-gray-800 mb-2" >Type of Dish (2nd preference)&nbsp;</label>
             
                 <input type="text" id="TypeOfDish" name="TypeofDish2" list="Dishes" className="w-full p-3 border
                 border-gray-300 rounded-lg focus:ring focus:ring-blue-500">
@@ -140,7 +140,7 @@ const EatInFormPage = () => {
 
             {/* Type of Dish 3rd preference*/}
             <div className="mb-6 w-80">
-              <label for="TypeOfDish" className="block text-lg font-semibold text-gray-800 mb-2" >Type of Dish (3nd preference)&nbsp;</label>
+              <label htmlFor="TypeOfDish" className="block text-lg font-semibold text-gray-800 mb-2" >Type of Dish (3nd preference)&nbsp;</label>
               
               <input type="text" id="TypeOfDish" name="TypeofDish3" list="Dishes" className="w-full p-3 border
               border-gray-300 rounded-lg focus:ring focus:ring-blue-500">

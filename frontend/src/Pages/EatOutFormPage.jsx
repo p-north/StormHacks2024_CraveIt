@@ -1,19 +1,56 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
 
 const EatOutFormPage = () => {
-  const [cuisine, setCuisine] = useState('');
-  const [price, setPrice] = useState(null);
-  const [rating, setRating] = useState(null);
-  const [address, setAddress] = useState('');
+  // const [cuisine, setCuisine] = useState('');
+  // const [price, setPrice] = useState(null);
+  // const [rating, setRating] = useState(null);
+  // const [address, setAddress] = useState('');
 
+  
+  const [formData, setFormData] = useState({
+    // Data sending goes here
+    cuisine: '',
+    price: '',
+    address: '',
+    rating: '',
+  });
+  
+  // Function to handle input changes
   const handlePriceClick = (selectedPrice) => {
-    setPrice(selectedPrice);
+    setFormData((prevData) => ({ ...prevData, price: selectedPrice }));
   };
 
   const handleRatingClick = (selectedRating) => {
-    setRating(selectedRating);
+    setFormData((prevData) => ({ ...prevData, rating: selectedRating }));
+  };
+
+  const handleCuisineChange = (e) =>{
+    setFormData((prevData) => ({...prevData, cuisine: e.target.value}))
+  }
+
+  const handleAddressChange = (e) =>{
+    setFormData((prevData) => ({...prevData, address: e.target.value}))
+  }
+ 
+  //Function to handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); //Prevent page refresh
+    try {
+      const response = await fetch("http://localhost:5000/api/data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), //Send from data as JSON
+      });
+
+      const result = await response.json();
+      console.log("Response from server", result);
+    } catch (error) {
+      console.log("Error sending data to backend:", error);
+    }
   };
 
   return (
@@ -22,7 +59,7 @@ const EatOutFormPage = () => {
     {/* Title */}
     <h1 className="text-5xl font-bold mb-10 text-gray-900">What Are You Craving?</h1>
 
-    <form method="POST" action="">
+    <form onSubmit={handleSubmit}>
       {/* Cuisine Input */}
       <div className="mb-6 w-80">
         <label className="block text-lg font-semibold text-gray-800 mb-2">Cuisine</label>
@@ -30,8 +67,9 @@ const EatOutFormPage = () => {
           type="text"
           className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-500"
           placeholder="Select cuisine"
-          value={cuisine}
-          onChange={(e) => setCuisine(e.target.value)}
+          name='cuisine'
+          value={formData.cuisine}
+          onChange={handleCuisineChange}
         />
       </div>
 
@@ -42,7 +80,7 @@ const EatOutFormPage = () => {
           {['$', '$$', '$$$', '$$$$'].map((sign, index) => (
             <span
               key={index}
-              className={`text-3xl cursor-pointer ${price === sign ? 'text-green-500' : 'text-gray-500'} transition duration-300`}
+              className={`text-3xl cursor-pointer ${formData.price === sign ? 'text-green-500' : 'text-gray-500'} transition duration-300`}
               onClick={() => handlePriceClick(sign)}
             >
               {sign}
@@ -58,8 +96,9 @@ const EatOutFormPage = () => {
           type="text"
           className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-500"
           placeholder="Enter address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          name='address'
+          value={formData.address}
+          onChange={handleAddressChange}
         />
       </div>
 
@@ -70,7 +109,7 @@ const EatOutFormPage = () => {
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}
-              className={`text-3xl cursor-pointer ${rating >= star ? 'text-yellow-400' : 'text-gray-400'} transition duration-300`}
+              className={`text-3xl cursor-pointer ${formData.rating >= star ? 'text-yellow-400' : 'text-gray-400'} transition duration-300`}
               onClick={() => handleRatingClick(star)}
             >
               ★
@@ -79,12 +118,12 @@ const EatOutFormPage = () => {
         </div>
       </div>
 
-    </form>
-
     {/* Submit Button */}
-    <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+    <button type='submit' className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
       Find Restaurants
     </button>
+    </form>
+
   </div>
 );
 };

@@ -25,3 +25,13 @@ exports.fetchDataFromAPI = async (req, res) =>{
         res.status(500).json({ error: 'Error fetching data from API' });
     }
 }
+
+// POST THE EATIN
+exports.receiveData = (req, res) =>{
+    const receivedData = req.body
+    console.log('Data received from React fronten:', receivedData)
+
+    // Send response back to frontend
+    res.status(200).json({message: 'Data received successfully', receivedData});
+
+}
