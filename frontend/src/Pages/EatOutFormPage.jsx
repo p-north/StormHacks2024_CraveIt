@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
+
 
 
 const EatOutFormPage = () => {
@@ -33,12 +34,13 @@ const EatOutFormPage = () => {
   const handleAddressChange = (e) =>{
     setFormData((prevData) => ({...prevData, address: e.target.value}))
   }
+  const navigate = useNavigate()
  
   //Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); //Prevent page refresh
     try {
-      const response = await fetch("http://localhost:5000/api/data", {
+      const response = await fetch("http://localhost:5003/api/data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,6 +49,7 @@ const EatOutFormPage = () => {
       });
 
       const result = await response.json();
+      navigate('/outResults', {state:result})
       console.log("Response from server", result);
     } catch (error) {
       console.log("Error sending data to backend:", error);
@@ -121,6 +124,7 @@ const EatOutFormPage = () => {
     {/* Submit Button */}
     <button type='submit' className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
       Find Restaurants
+      <Link to='/outResults'></Link>
     </button>
     </form>
 

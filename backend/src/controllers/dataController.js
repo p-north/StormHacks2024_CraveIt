@@ -36,7 +36,7 @@ const fetchEatInData = async (attributes) =>{
     const dish1 = attributes.dish1
     const dish2 = attributes.dish2
     const dish3 = attributes.dish3
-
+    console.log("eat in called")
     //Fetch the api
     // const respone = await fetch(`API-URL`,{
     //     method: 'GET',
@@ -172,15 +172,6 @@ const fetchEatInData = async (attributes) =>{
             common_meal = data_DISH3.meals[index];
         }
 
-
-
-
-       
-        
-        
-        
-    
-        
    
     }
 
@@ -191,7 +182,15 @@ const fetchEatInData = async (attributes) =>{
     }
 
 
-    return await common_meal
+        let id = common_meal.idMeal;
+
+
+        const testing = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+        common_meal= await testing.json();
+
+        console.log(common_meal.meals[0].strInstructions);
+
+        return common_meal.meals[0];
 
 
 };
@@ -202,7 +201,7 @@ const fetchEatOutData = async (attributes) =>{
     const price = attributes.price;
     const address = attributes.address;
     const rating = attributes.rating;
-
+    console.log("eat out is called", cuisine, price, address, rating)
     // Add pluses to the address
     let plusString = ""
     let wasSpace = false
@@ -220,6 +219,7 @@ const fetchEatOutData = async (attributes) =>{
         plusString += ch
         wasSpace = false
     }
+
     
 }
 
@@ -236,7 +236,20 @@ const fetchEatOutData = async (attributes) =>{
     //     throw new Error(`HTTP error! status: ${response.status}`)
     // }
 
-    return response.json();
+    const data = await response.json();
+
+    // console.log("data is: ", data)
+    
+    // // Return only the first 3 results, if available
+    // const firstThreeResults = data?.results.filter((value) => {
+    //     return value.rating >= rating.length
+    // }).slice(0, 3); // This will return an empty array if results is undefined
+    
+    // // Return only the first 3 results, if available
+    const firstThreeResults = data?.results.slice(0, 3); // This will return an empty array if results is undefined
+    
+
+    return firstThreeResults; // Return the first three results
 
 
 }
@@ -257,6 +270,8 @@ exports.receiveData = async (req, res) =>{
             apiResponse = await fetchEatOutData(receivedData);
 
         }
+
+        console.log("apidata", apiResponse)
 
         // send the retrieved data back to the frontend
         res.status(200).json({message: 'Data retrived successfully', apiData: apiResponse});

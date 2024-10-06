@@ -31,6 +31,7 @@ const recipe = {
 const EatInResultPage = () => {
   const location = useLocation();
   const apiResponse = location.state;
+  console.log("Apiresponse", apiResponse)
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#EFB710] to-[#FFE59E]">
       {/* Title */}

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 // Hardcoded restaurant data
 const restaurants = [
@@ -22,7 +23,11 @@ const restaurants = [
 ];
 
 const EatOutResults = () => {
+  const location = useLocation();
+  const apiResponse = location.state;
+  console.log('Response:', apiResponse)
   return (
+
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#EFB710] to-[#FFE59E]">
       {/* Title */}
       <h1 className="text-5xl font-bold mb-10 mt-8  text-[#3260ea]">Craving Fulfilled</h1>
