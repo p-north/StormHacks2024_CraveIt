@@ -42,6 +42,7 @@ const HomePage = () => {
       <footer className="mt-16 text-center text-gray-700">
         <p className="text-lg">Your one-stop solution for all your food cravings!</p>
         <p className="text-sm">© 2024 Crave It! All rights reserved.</p>
+        <p className="text-sm">Hamzah Alshawwaf, Puneet North, Nisal Panditha, Brett Rodrigues</p>
       </footer>
     </div>
   );
