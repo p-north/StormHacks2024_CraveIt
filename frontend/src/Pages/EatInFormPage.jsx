@@ -32,7 +32,7 @@ const EatInFormPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); //Prevent page refresh
     try {
-      const response = await fetch("http://localhost:5003/api/data", {
+      const response = await fetch("https://crave-it-server.onrender.com/api/data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
