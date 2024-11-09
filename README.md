@@ -1,4 +1,4 @@
-!(Site Link)[https://crave-it-client.onrender.com/]
+(Site Link)[https://crave-it-client.onrender.com/]
 # Crave It! - Food Finder
 
 **Crave It!** is a web app that helps you decide whether to cook or dine out by providing recipes based on cravings and ingredients, or by finding nearby restaurants tailored to your taste, budget, and location.
