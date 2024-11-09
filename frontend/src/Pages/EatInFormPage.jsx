@@ -84,40 +84,9 @@ const EatInFormPage = () => {
             <datalist id="Cuisines">
               <option value="American">American</option>
               <option value="British">British</option>
-              <option value="Canadian">Canadian</option>
-              <option value="Chinese">Chinese</option>
-
-              <option value="Croatian">Croatian</option>
-              <option value="Dutch">Dutch</option>
-              <option value="Egyptain">Egyptian</option>
-              <option value="Fillipino">Fillipino</option>
-
               <option value="French">French</option>
-              <option value="Greek">Greek</option>
-              <option value="Indian">Indian</option>
-              <option value="Irish">Irish</option>
-
               <option value="Italian">Italian</option>
-              <option value="Jamaican">Jamaican</option>
-              <option value="Japanese">Japanese</option>
-              <option value="Kenyan">Kenyan</option>
-
-              <option value="Malaysian">Malaysian</option>
-              <option value="Mexican">Mexican</option>
-              <option value="Moroccan">Morroccan</option>
-              <option value="Polish">Polish</option>
-
-              <option value="Portugese">Portugese</option>
-              <option value="Russian">Russian</option>
-              <option value="Spanish">Spanish</option>
-              <option value="Thai">Thai</option>
-
-              <option value="Tunisian">Tunisian</option>
-              <option value="Turkish">Turkish</option>
-              <option value="Ukrainian">Ukrainian</option>
-              <option value="Vietnamese">Vietnamese</option>
-
-              <option value="Unknown">Other</option>
+            
             </datalist>
           </div>
 
