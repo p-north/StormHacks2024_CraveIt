@@ -10,7 +10,7 @@ We are beginners, and our teammate had a dilemma where he had to choose between 
 Our web app helps users decide whether to cook or dine out by providing recipes based on cravings and available ingredients, or by finding nearby restaurants that match their craving, rating, budget, and location.
 
 # How We Built It
-We built the app using **React** for the front end, utilizing **Tailwind CSS** for stylish and responsive designs. We integrated **React Router** for seamless navigation between pages. Additionally, we used APIs like **Google Places** and **MealDB** to fetch restaurant and recipe data based on user preferences. The backend was implemented using JavaScript.
+We built the app using **React** for the front end, utilizing **Tailwind CSS** for stylish and responsive designs. Developed RESTful API endpoints with Express.js to integrate third-party APIs. We integrated **React Router** for seamless navigation between pages. Additionally, we used APIs like **Google Places** and **MealDB** to fetch restaurant and recipe data based on user preferences. The backend was implemented using JavaScript.
 
 # Challenges We Ran Into
 We encountered many challenges, from issues with retrieving data attributes from APIs to server problems. However, with trial and error, we solved most of these issues. Much thanks goes to the mentors who guided us along the way.
