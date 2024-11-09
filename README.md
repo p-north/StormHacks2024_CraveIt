@@ -1,7 +1,12 @@
-**[Site Link](https://crave-it-client.onrender.com/)**
+
 # Crave It! - Food Finder
 
+<div align="center" style="font-size: 1.5em; font-weight: bold;">
+    <a href="https://crave-it-client.onrender.com/" target="_blank">Visit Crave It!</a>
+</div>
+
 **Crave It!** is a web app that helps you decide whether to cook or dine out by providing recipes based on cravings and ingredients, or by finding nearby restaurants tailored to your taste, budget, and location.
+
 
 # Inspiration
 We are beginners, and our teammate had a dilemma where he had to choose between eating in or dining out with friends, along with deciding what food he would eat based on each option.
